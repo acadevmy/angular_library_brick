@@ -1,0 +1,126 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "env": {
+    "es6": true
+  },
+  "plugins": [
+    "simple-import-sort"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "src/**/*.ts",
+        "!src/**/*.spec.ts",
+        "!src/**/*.jest.ts"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.lib.json",
+        "extraFileExtensions": [".html"]
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "no-console": "error",
+        "max-lines-per-function": [
+          "error",
+          {
+            "max": 40
+          }
+        ],
+        "max-lines": [
+          "error",
+          {
+            "max": 150
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "lib",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "lib",
+            "style": "kebab-case"
+          }
+        ],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
+      }
+    },
+    {
+      "files": [
+        "src/**/*.spec.ts",
+        "src/**/*.jest.ts"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.lib.spec.json",
+        "extraFileExtensions": [".html"]
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "no-console": "error",
+        "max-lines-per-function": [
+          "error",
+          {
+            "max": 40
+          }
+        ],
+        "max-lines": [
+          "error",
+          {
+            "max": 150
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "lib",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "lib",
+            "style": "kebab-case"
+          }
+        ],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}
