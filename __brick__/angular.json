@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-lib": {
+    "{{libraryName.paramCase()}}": {
       "projectType": "library",
       "root": "",
       "sourceRoot": "src",
